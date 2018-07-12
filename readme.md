@@ -23,17 +23,13 @@ You can read more about it on [Android official website](https://source.android.
 
 ```javascript
 
- cordova.exec(function success(rootStatus){
-        
-      if(rootStatus){
-        //Device is rooted, handle the case
-      } else {
-        //Device is not rooted, proceed to the app
-      }
-
+ 
+ cordova.exec(function success(signature){
+        //Check signature
     }, function failure(error){
-        alert("Something went wrong");
+        //alert("Something went wrong");
     }, "ReadAppSignature", "getAppSignature", []);
+
 ```
 
 ## License
