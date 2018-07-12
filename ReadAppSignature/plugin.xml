@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-get-app-signature" version="0.1.0">
+   <name>ReadAppSignature</name>
+   <js-module name="ReadAppSignature" src="www/ReadAppSignature.js">
+      <clobbers target="cordova.plugins.ReadAppSignature" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="ReadAppSignature">
+            <param name="android-package" value="cordova.plugin.appSignature.ReadAppSignature" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/ReadAppSignature.java" target-dir="src/cordova/plugin/appSignature/ReadAppSignature" />
+   </platform>
+</plugin>
+
