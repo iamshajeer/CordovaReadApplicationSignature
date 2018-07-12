@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-get-app-signature",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This plugin is used to get application signature",
   "cordova": {
     "id": "cordova-plugin-get-app-signature",

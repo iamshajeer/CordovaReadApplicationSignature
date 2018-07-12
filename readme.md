@@ -17,12 +17,11 @@ You can read more about it on [Android official website](https://source.android.
 
 ## Tampering Prevention Techniques
 	
-	Signature verification is one of the method to prevent apk tampering, you need to find the signature key and that key you need to validate from server when the application opens, get the key for the first time and pass it to your server guy, let him store it in his server and each time when the app opens he will have to validate the key, if the key is not matching the app has been tampered, in that case you can block the user from accessing the application,
+> Signature verification is one of the method to prevent apk tampering, you need to find the signature key and that key you need to validate from server when the application opens, get the key for the first time and pass it to your server guy, let him store it in his server and each time when the app opens he will have to validate the key, if the key is not matching the app has been tampered, in that case you can block the user from accessing the application,
 
 ## Usage
 
 ```javascript
-
  
  cordova.exec(function success(signature){
         //Check signature
