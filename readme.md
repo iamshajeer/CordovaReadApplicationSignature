@@ -24,10 +24,10 @@ You can read more about it on [Android official website](https://source.android.
 ```javascript
  
   cordova.plugins.ReadAppSignature.getAppSignature(function(signature){
-		console.debug("signature: %s", signature);
+    console.debug("signature: %s", signature);
 	}, function(error){
-		console.debug("signature error: %s", JSON.stringify(error));
-	});
+    console.debug("signature error: %s", JSON.stringify(error));
+  });
 
 ```
 
