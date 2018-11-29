@@ -11,7 +11,7 @@
          </feature>
       </config-file>
       <config-file parent="/*" target="AndroidManifest.xml" />
-      <source-file src="src/android/ReadAppSignature.java" target-dir="src/cordova/plugin/appSignature/ReadAppSignature" />
+      <source-file src="src/android/ReadAppSignature.java" target-dir="src/cordova/plugin/appSignature" />
    </platform>
 </plugin>
 
