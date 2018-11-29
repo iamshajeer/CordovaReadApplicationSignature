@@ -25,7 +25,7 @@ You can read more about it on [Android official website](https://source.android.
  
   cordova.plugins.ReadAppSignature.getAppSignature(function(signature){
     console.debug("signature: %s", signature);
-	}, function(error){
+  }, function(error){
     console.debug("signature error: %s", JSON.stringify(error));
   });
 
