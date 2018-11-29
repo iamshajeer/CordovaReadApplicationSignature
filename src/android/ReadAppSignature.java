@@ -1,12 +1,13 @@
 package cordova.plugin.appSignature;
 
+import android.util.Log;
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
@@ -22,6 +23,7 @@ import java.security.NoSuchProviderException;
  * This class echoes a string called from JavaScript.
  */
 public class ReadAppSignature extends CordovaPlugin {
+    private final String TAG = "ReadAppSignature";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -46,9 +48,10 @@ public class ReadAppSignature extends CordovaPlugin {
                     cordova.getActivity().getPackageName(), PackageManager.GET_SIGNATURES);
 
             //note sample just checks the first signature
-            for (Signature signature : packageInfo.signatures) {
-                // SHA1 the signature
-                LogUtils.LOGD(TAG, "getAppSignature() called : " + getSHA1(signature.toByteArray()));
+            Signature[] signatures = packageInfo.signatures;
+            if (signatures.length > 0) {
+                Signature signature = signatures[0];
+                Log.d(TAG, "getAppSignature() called : " + getSHA1(signature.toByteArray()));
                 return getSHA1(signature.toByteArray());
             }
         } catch (PackageManager.NameNotFoundException e) {
