@@ -23,11 +23,11 @@ You can read more about it on [Android official website](https://source.android.
 
 ```javascript
  
- cordova.exec(function success(signature){
-        //Check signature
-    }, function failure(error){
-        //alert("Something went wrong");
-    }, "ReadAppSignature", "getAppSignature", []);
+  cordova.plugins.ReadAppSignature.getAppSignature(function(signature){
+    console.debug("signature: %s", signature);
+  }, function(error){
+    console.debug("signature error: %s", JSON.stringify(error));
+  });
 
 ```
 
